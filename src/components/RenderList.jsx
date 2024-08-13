@@ -1,9 +1,9 @@
 const RenderList = ({ itemList }) => {
   return (
     <div className="list__render__UI">
-      {itemList.map((ele) => {
-        return ele;
-      })}
+      {itemList.map((ele) => (
+        <span>{ele}</span>
+      ))}
     </div>
   );
 };
