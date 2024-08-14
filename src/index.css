@@ -6,10 +6,6 @@ body {
   transition: 0.2s;
   scroll-behavior: smooth;
 }
-/* 
-html {
-  scroll-behavior: smooth;
-} */
 
 .navbar__UI__div {
   display: flex;
@@ -83,7 +79,6 @@ html {
 
 .display__tile__UI {
   display: flex;
-  /* grid-template-rows: auto; */
   flex-direction: column;
   position: absolute;
   justify-content: center;
@@ -112,9 +107,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1000px;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 250px;
   position: fixed;
   max-height: 1000px;
   height: 100%;

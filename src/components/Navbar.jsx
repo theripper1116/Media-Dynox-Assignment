@@ -4,10 +4,6 @@ import RenderList from "./RenderList";
 import { SPACE__LIST, STYLE__LIST, TYPE__LIST } from "../utils/listData";
 
 const Navbar = ({ passListDataToRenderList }) => {
-  // const [visibilityForSpaceList, setVisibilityForSpaceList] = useState(false);
-  // const [visibilityForTypeList, setVisibilityForTypeList] = useState(false);
-  // const [visibilityForStyleList, setVisibilityForStyleList] = useState(false);
-  // const [visibilityForCityList, setVisibilityForCityList] = useState(false);
   return (
     <>
       <div className="navbar__UI">
@@ -22,22 +18,18 @@ const Navbar = ({ passListDataToRenderList }) => {
             <span onClick={() => passListDataToRenderList("SPACE__LIST")}>
               Space {">"}
               <br />
-              {/* {visibilityForSpaceList && <RenderList itemList={SPACE__LIST} />} */}
             </span>
             <span onClick={() => passListDataToRenderList("TYPE__LIST")}>
               Type {">"}
               <br />
-              {/* {visibilityForTypeList && <RenderList itemList={TYPE__LIST} />} */}
             </span>
             <span onClick={() => passListDataToRenderList("STYLE__LIST")}>
               Style {">"}
               <br />
-              {/* {visibilityForStyleList && <RenderList itemList={STYLE__LIST} />} */}
             </span>
             <span onClick={() => passListDataToRenderList("CITY__LIST")}>
               City {">"}
               <br />
-              {/* {visibilityForCityList && <RenderList itemList={CITY__LIST} />} */}
             </span>
           </div>
           <div className="navbar__UI__items__2">

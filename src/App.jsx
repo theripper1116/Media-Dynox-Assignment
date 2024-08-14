@@ -11,31 +11,57 @@ import {
 
 function App() {
   const [visibilityForRenderList, setVisibilityForRenderList] = useState(false);
-  const [dataForRenderList, setDataForRenderList] = useState();
+  const [dataForRenderList, setDataForRenderList] = useState({
+    input: "default",
+    dataArray: [],
+  });
   const [backgroundColor, setBackgroundColor] = useState();
 
+  const handleVisibility = (input) => {
+    console.log(dataForRenderList);
+    if (input === dataForRenderList.input)
+      setVisibilityForRenderList((prev) => !prev);
+  };
+
   const passListDataToRenderList = (input) => {
-    console.log(input);
-    if (input === "SPACE__LIST") {
-      setDataForRenderList(SPACE__LIST);
-      visibilityForRenderList
-        ? setVisibilityForRenderList(false)
-        : setVisibilityForRenderList(true);
-    } else if (input === "TYPE__LIST") {
-      setDataForRenderList(TYPE__LIST);
-      visibilityForRenderList
-        ? setVisibilityForRenderList(false)
-        : setVisibilityForRenderList(true);
-    } else if (input === "STYLE__LIST") {
-      setDataForRenderList(STYLE__LIST);
-      visibilityForRenderList
-        ? setVisibilityForRenderList(false)
-        : setVisibilityForRenderList(true);
-    } else if (input === "CITY__LIST") {
-      setDataForRenderList(CITY__LIST);
-      visibilityForRenderList
-        ? setVisibilityForRenderList(false)
-        : setVisibilityForRenderList(true);
+    switch (input) {
+      case "SPACE__LIST": {
+        // setDataForRenderList((prev) => {
+        //   console.log(prev);
+        //   prev.input = input;
+        //   prev.dataArray = SPACE__LIST;
+        // });
+        setDataForRenderList({
+          input: input,
+          dataArray: SPACE__LIST,
+        });
+        handleVisibility(input);
+        break;
+      }
+      case "TYPE__LIST": {
+        setDataForRenderList({
+          input: input,
+          dataArray: TYPE__LIST,
+        });
+        handleVisibility(input);
+        break;
+      }
+      case "STYLE__LIST": {
+        setDataForRenderList({
+          input: input,
+          dataArray: STYLE__LIST,
+        });
+        handleVisibility(input);
+        break;
+      }
+      case "CITY__LIST": {
+        setDataForRenderList({
+          input: input,
+          dataArray: CITY__LIST,
+        });
+        handleVisibility(input);
+        break;
+      }
     }
   };
 
@@ -55,7 +81,9 @@ function App() {
       </div>
       {visibilityForRenderList && (
         <div className="render__list__UI">
-          <RenderList itemList={dataForRenderList} />
+          {dataForRenderList?.dataArray && (
+            <RenderList itemList={dataForRenderList.dataArray} />
+          )}
         </div>
       )}
       <Navbar passListDataToRenderList={passListDataToRenderList} />
