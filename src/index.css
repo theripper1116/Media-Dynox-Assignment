@@ -1,6 +1,5 @@
 body {
-  font-family:  sans-serif;
-  position: relative;
+  font-family: sans-serif;
   color: #fff;
   background-color: rgb(142, 141, 141);
   -webkit-font-smoothing: antialiased;
@@ -106,4 +105,17 @@ html {
 .list__render__UI {
   display: grid;
   grid-template-columns: auto;
+  font-size: 80px;
+}
+
+.render__list__UI {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 100px;
+  position: fixed;
+  max-height: 1000px;
+  height: 100%;
 }

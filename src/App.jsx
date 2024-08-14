@@ -12,6 +12,7 @@ import {
 function App() {
   const [visibilityForRenderList, setVisibilityForRenderList] = useState(false);
   const [dataForRenderList, setDataForRenderList] = useState();
+  const [backgroundColor, setBackgroundColor] = useState();
 
   const passListDataToRenderList = (input) => {
     console.log(input);
@@ -39,13 +40,26 @@ function App() {
   };
 
   return (
-    <>
-      <div className="display__tile">
-        <DisplayTile />
-        {visibilityForRenderList && <RenderList itemList={dataForRenderList} />}
+    <div
+      style={
+        backgroundColor
+          ? { backgroundColor: { backgroundColor } }
+          : { backgroundColor: "rgb(142, 141, 141);" }
+      }
+    >
+      <div
+        className="display__tile"
+        style={visibilityForRenderList ? { opacity: "0.1" } : {}}
+      >
+        <DisplayTile setBackgroundColor={setBackgroundColor} />
       </div>
+      {visibilityForRenderList && (
+        <div className="render__list__UI">
+          <RenderList itemList={dataForRenderList} />
+        </div>
+      )}
       <Navbar passListDataToRenderList={passListDataToRenderList} />
-    </>
+    </div>
   );
 }
 
