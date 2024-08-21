@@ -8,7 +8,7 @@ const DisplayTile = ({ setBackgroundColor }) => {
         TILE__DATA.map((ele) => {
           return (
             <div key={ele.id}>
-              <img className="display__tile__UI__image" src={ele.imageLink} />
+              <img className="display__tile__UI__image" src={ele.imageLink} loading="lazy"/>
               <span className="display__title__title">{ele.title}</span>
               {setBackgroundColor(ele.backgroundColor)}
               <br />

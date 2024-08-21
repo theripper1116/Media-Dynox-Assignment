@@ -1,6 +1,6 @@
 const RenderList = ({ itemList }) => {
   return (
-    <div className="list__render__UI">
+    <div className="render__list__UI__div">
       {itemList.map((ele, index) => (
         <span key={index}>{ele}</span>
       ))}

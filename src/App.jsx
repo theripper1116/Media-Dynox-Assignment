@@ -18,7 +18,7 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState();
 
   const handleVisibility = (input) => {
-    console.log(dataForRenderList);
+    if (!visibilityForRenderList) setVisibilityForRenderList(true);
     if (input === dataForRenderList.input)
       setVisibilityForRenderList((prev) => !prev);
   };
@@ -26,11 +26,6 @@ function App() {
   const passListDataToRenderList = (input) => {
     switch (input) {
       case "SPACE__LIST": {
-        // setDataForRenderList((prev) => {
-        //   console.log(prev);
-        //   prev.input = input;
-        //   prev.dataArray = SPACE__LIST;
-        // });
         setDataForRenderList({
           input: input,
           dataArray: SPACE__LIST,
