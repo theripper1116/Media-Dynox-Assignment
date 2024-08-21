@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { DENIOT_LOGO_LINK } from "../utils/links";
-import RenderList from "./RenderList";
-import { SPACE__LIST, STYLE__LIST, TYPE__LIST } from "../utils/listData";
+import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = ({ passListDataToRenderList }) => {
   return (
@@ -16,19 +14,19 @@ const Navbar = ({ passListDataToRenderList }) => {
             ></img>
             <span>All Projects</span>
             <span onClick={() => passListDataToRenderList("SPACE__LIST")}>
-              Space {">"}
+              Space <FaAngleDown />
               <br />
             </span>
             <span onClick={() => passListDataToRenderList("TYPE__LIST")}>
-              Type {">"}
+              Type <FaAngleDown />
               <br />
             </span>
             <span onClick={() => passListDataToRenderList("STYLE__LIST")}>
-              Style {">"}
+              Style <FaAngleDown />
               <br />
             </span>
             <span onClick={() => passListDataToRenderList("CITY__LIST")}>
-              City {">"}
+              City <FaAngleDown />
               <br />
             </span>
           </div>
